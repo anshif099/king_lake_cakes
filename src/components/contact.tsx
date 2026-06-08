@@ -55,8 +55,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <strong>Email</strong>
-                  <a href="mailto:hello@kinglakecakes.com">hello@kinglakecakes.com</a>
-                  <span className="detail-note">(Email to be confirmed by Ajish)</span>
+                  <a href="mailto:hello@kinglakecakes.com.au">hello@kinglakecakes.com.au</a>
                 </div>
               </div>
               <div className="contact-detail">

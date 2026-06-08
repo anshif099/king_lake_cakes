@@ -16,7 +16,7 @@ const steps = [
   },
   {
     number: 'IV',
-    title: 'Private Delivery',
+    title: 'Personal Delivery',
     description: 'Your creation is delivered with white-glove care, arriving in perfect condition for your special moment.',
   },
 ]
