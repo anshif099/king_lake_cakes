@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 import cake1 from '../assets/portfolio/CAKE IMG 1.png'
 import cake2 from '../assets/portfolio/CAKE IMG 2.png'
 import cake3 from '../assets/portfolio/CAKE IMG 3.png'
@@ -17,6 +19,58 @@ const galleryItems = [
 ]
 
 export default function Gallery() {
+  const [activeItem, setActiveItem] = useState(null)
+
+  useEffect(() => {
+    if (!activeItem) {
+      return undefined
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setActiveItem(null)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [activeItem])
+
+  const openPreview = (item, target) => {
+    const rect = target.getBoundingClientRect()
+    const gap = 16
+    const previewWidth = Math.min(window.innerWidth - gap * 2, Math.max(rect.width * 1.8, 560))
+    const previewHeight = Math.min(window.innerHeight - gap * 2, Math.max(rect.height * 1.8, 520))
+    const centerX = rect.left + rect.width / 2
+    const centerY = rect.top + rect.height / 2
+    const left = Math.min(Math.max(centerX, previewWidth / 2 + gap), window.innerWidth - previewWidth / 2 - gap)
+    const top = Math.min(Math.max(centerY, previewHeight / 2 + gap), window.innerHeight - previewHeight / 2 - gap)
+
+    setActiveItem({
+      ...item,
+      style: {
+        height: `${previewHeight}px`,
+        left: `${left}px`,
+        top: `${top}px`,
+        width: `${previewWidth}px`,
+      },
+    })
+  }
+
+  const closePreview = () => {
+    setActiveItem(null)
+  }
+
+  const handlePreviewKeyDown = (event, item) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      openPreview(item, event.currentTarget)
+    }
+  }
+
   return (
     <section className="gallery-section" id="gallery">
       <div className="container">
@@ -32,7 +86,16 @@ export default function Gallery() {
         </div>
         <div className="gallery-grid">
           {galleryItems.map((item) => (
-            <article className={`gallery-item ${item.className ?? ''}`} key={item.caption}>
+            <article
+              className={`gallery-item ${item.className ?? ''}`}
+              key={item.caption}
+              onClick={(event) => openPreview(item, event.currentTarget)}
+              onFocus={(event) => openPreview(item, event.currentTarget)}
+              onKeyDown={(event) => handlePreviewKeyDown(event, item)}
+              onMouseEnter={(event) => openPreview(item, event.currentTarget)}
+              role="button"
+              tabIndex="0"
+            >
               <img src={item.image} alt={item.caption} />
               <div className="gallery-caption">
                 <span className="gallery-caption-text">{item.caption}</span>
@@ -41,6 +104,17 @@ export default function Gallery() {
           ))}
         </div>
       </div>
+      {activeItem && (
+        <div
+          className="gallery-hover-preview"
+          onMouseLeave={closePreview}
+          style={activeItem.style}
+          aria-label={`${activeItem.caption} full image preview`}
+        >
+          <img src={activeItem.image} alt={activeItem.caption} />
+          <p>{activeItem.caption}</p>
+        </div>
+      )}
     </section>
   )
 }

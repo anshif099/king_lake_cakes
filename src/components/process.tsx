@@ -28,7 +28,7 @@ export default function Process() {
         <div className="process-header">
           <p className="section-label">How It Works</p>
           <h2 className="section-title">
-            The <em>Private</em> Experience
+            The <em>Exclusive</em> Experience
           </h2>
           <div className="gold-rule centered" />
         </div>
