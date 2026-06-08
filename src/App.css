@@ -598,6 +598,10 @@ textarea {
 }
 
 .gallery-row {
+  --carousel-item-height: 420px;
+  --carousel-item-width: 320px;
+  --carousel-shift: -1680px;
+  height: var(--carousel-item-height);
   margin-left: 60px;
   overflow: hidden;
   width: calc(100% - 60px);
@@ -610,19 +614,24 @@ textarea {
 .gallery-row-track {
   animation: galleryAutoScroll 34s linear infinite;
   display: flex;
+  height: var(--carousel-item-height);
+  min-width: max-content;
   width: max-content;
   will-change: transform;
 }
 
 .gallery-row-set {
   display: flex;
+  flex: 0 0 auto;
   gap: 16px;
   padding-right: 16px;
 }
 
 .gallery-row-item {
-  flex: 0 0 320px;
-  height: 420px;
+  background: var(--charcoal);
+  flex: 0 0 var(--carousel-item-width);
+  height: var(--carousel-item-height);
+  width: var(--carousel-item-width);
 }
 
 .process-section {
@@ -1067,10 +1076,10 @@ textarea {
 
 @keyframes galleryAutoScroll {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translate3d(var(--carousel-shift), 0, 0);
   }
 }
 
@@ -1234,13 +1243,17 @@ textarea {
   }
 
   .gallery-row {
+    --carousel-item-height: 340px;
+    --carousel-item-width: 260px;
+    --carousel-shift: -1380px;
     margin-left: 24px;
     width: calc(100% - 24px);
   }
 
   .gallery-row-item {
-    flex-basis: 260px;
-    height: 340px;
+    flex-basis: var(--carousel-item-width);
+    height: var(--carousel-item-height);
+    width: var(--carousel-item-width);
   }
 
   .contact-form {
