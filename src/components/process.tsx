@@ -1,7 +1,7 @@
 const steps = [
   {
     number: 'I',
-    title: 'Private Consultation',
+    title: 'Exclusive Consultation',
     description: 'We begin with a private consultation to understand your vision, occasion, flavour preferences and aesthetic.',
   },
   {
