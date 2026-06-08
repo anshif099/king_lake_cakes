@@ -540,13 +540,19 @@ textarea {
   min-height: 0;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.75s ease;
+  transition: background 0.35s ease, object-fit 0.35s ease, transform 0.75s ease;
   width: 100%;
 }
 
 .gallery-item:hover img,
 .gallery-row-item:hover img {
   transform: scale(1.04);
+}
+
+.gallery-item:hover img {
+  background: var(--charcoal);
+  object-fit: contain;
+  transform: scale(1);
 }
 
 .gallery-item.tall {
@@ -578,7 +584,7 @@ textarea {
 }
 
 .gallery-item:hover .gallery-caption {
-  background: rgba(13, 11, 10, 0.4);
+  background: linear-gradient(180deg, rgba(13, 11, 10, 0) 58%, rgba(13, 11, 10, 0.55) 100%);
 }
 
 .gallery-item:hover .gallery-caption-text {

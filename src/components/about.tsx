@@ -1,4 +1,5 @@
 import philosophyImage from '../assets/OurPhilosophy.png'
+import miniPhilosophyImage from '../assets/miniOurPhilosophy.png'
 
 const pillars = [
   { value: '100%', label: 'Bespoke' },
@@ -13,7 +14,7 @@ export default function About() {
         <div className="about-inner">
           <div className="about-image-stack">
             <img src={philosophyImage} alt="Kinglake signature cake" className="about-img-main" />
-            <img src={philosophyImage} alt="Artisan cake detail" className="about-img-accent" />
+            <img src={miniPhilosophyImage} alt="Artisan cake detail" className="about-img-accent" />
           </div>
           <div className="about-text-block">
             <p className="section-label">Our Philosophy</p>
@@ -34,8 +35,8 @@ export default function About() {
               receives our full and undivided attention.
             </p>
             <p className="about-body">
-              From architectural wedding towers to intimate celebration centrepieces, our work spans the full spectrum of
-              luxury confectionery &mdash; always bespoke, always breathtaking.
+              From architectural wedding cake towers to intimate celebration centrepieces, our work spans the full
+              spectrum of luxury confectionery &mdash; always bespoke, always breathtaking.
             </p>
             <div className="pillars">
               {pillars.map((pillar) => (
