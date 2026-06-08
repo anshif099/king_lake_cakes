@@ -1,15 +1,65 @@
-import cake8 from '../assets/portfolio/CAKE IMG 8.webp'
-import cake9 from '../assets/portfolio/CAKE IMG 9.webp'
-import cake10 from '../assets/portfolio/CAKE IMG 10.webp'
-import cake11 from '../assets/portfolio/CAKE IMG 11.webp'
-import cake12 from '../assets/portfolio/CAKE IMG 12.webp'
+import feed1 from '../assets/instagram-feed/feed-01.jpg'
+import feed2 from '../assets/instagram-feed/feed-02.webp'
+import feed3 from '../assets/instagram-feed/feed-03.jpg'
+import feed4 from '../assets/instagram-feed/feed-04.webp'
+import feed5 from '../assets/instagram-feed/feed-05.jpg'
+import feed6 from '../assets/instagram-feed/feed-06.jpg'
+import feed7 from '../assets/instagram-feed/feed-07.webp'
+import feed8 from '../assets/instagram-feed/feed-08.jpg'
+import feed9 from '../assets/instagram-feed/feed-09.jpg'
+import feed10 from '../assets/instagram-feed/feed-10.jpg'
 
 const creations = [
-  { label: 'Creation 1', image: cake8 },
-  { label: 'Creation 2', image: cake9 },
-  { label: 'Creation 3', image: cake10 },
-  { label: 'Creation 4', image: cake11 },
-  { label: 'Creation 5', image: cake12 },
+  {
+    label: 'Kinglake Cakes Instagram reel',
+    image: feed1,
+    href: 'https://www.instagram.com/reel/CmIRqzBrgLk/',
+  },
+  {
+    label: 'Chocolate Mud cake Instagram post',
+    image: feed2,
+    href: 'https://www.instagram.com/p/Clr5oDQv-tC/',
+  },
+  {
+    label: 'Birthday cake Instagram reel',
+    image: feed3,
+    href: 'https://www.instagram.com/reel/Clr5izju-0v/',
+  },
+  {
+    label: 'Birthday cake Instagram post',
+    image: feed4,
+    href: 'https://www.instagram.com/p/Clr49YPPk7g/',
+  },
+  {
+    label: 'Circus cake Instagram reel',
+    image: feed5,
+    href: 'https://www.instagram.com/reel/Ckn3Op6OHau/',
+  },
+  {
+    label: 'Carnival cake Instagram reel',
+    image: feed6,
+    href: 'https://www.instagram.com/reel/Ckny0TJrc_Z/',
+  },
+  {
+    label: 'Carnival cake Instagram post',
+    image: feed7,
+    href: 'https://www.instagram.com/p/CknqjPzvDrY/',
+  },
+  {
+    label: 'Stacked books cake Instagram reel',
+    image: feed8,
+    href: 'https://www.instagram.com/reel/CkLgk7Lr_8U/',
+  },
+  {
+    label: 'Books celebration cake Instagram reel',
+    image: feed9,
+    href: 'https://www.instagram.com/reel/CkLbLYRgoO7/',
+  },
+  {
+    label: 'Ten tier books cake Instagram reel',
+    image: feed10,
+    href: 'https://www.instagram.com/reel/CjKMweLPVCq/',
+  },
 ]
 
 export default function MoreCreations() {
@@ -25,9 +75,17 @@ export default function MoreCreations() {
           {[0, 1].map((setIndex) => (
             <div className="gallery-row-set" key={setIndex} aria-hidden={setIndex === 1}>
               {creations.map((creation) => (
-                <article className="gallery-row-item" key={`${creation.label}-${setIndex}`} aria-label={creation.label}>
+                <a
+                  className="gallery-row-item"
+                  href={creation.href}
+                  key={`${creation.href}-${setIndex}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  tabIndex={setIndex === 1 ? -1 : undefined}
+                  aria-label={`Open ${creation.label} on Instagram`}
+                >
                   <img src={creation.image} alt={creation.label} />
-                </article>
+                </a>
               ))}
             </div>
           ))}

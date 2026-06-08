@@ -600,7 +600,7 @@ textarea {
 .gallery-row {
   --carousel-item-height: 420px;
   --carousel-item-width: 320px;
-  --carousel-shift: -1680px;
+  --carousel-shift: -3360px;
   height: var(--carousel-item-height);
   margin-left: 60px;
   overflow: hidden;
@@ -612,7 +612,7 @@ textarea {
 }
 
 .gallery-row-track {
-  animation: galleryAutoScroll 34s linear infinite;
+  animation: galleryAutoScroll 58s linear infinite;
   display: flex;
   height: var(--carousel-item-height);
   min-width: max-content;
@@ -631,6 +631,7 @@ textarea {
   background: var(--charcoal);
   flex: 0 0 var(--carousel-item-width);
   height: var(--carousel-item-height);
+  text-decoration: none;
   width: var(--carousel-item-width);
 }
 
@@ -1035,6 +1036,23 @@ textarea {
   width: 32px;
 }
 
+.footer-social svg {
+  display: block;
+  fill: none;
+  height: 15px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+  width: 15px;
+}
+
+.footer-social a[aria-label='Facebook'] svg,
+.footer-social a[aria-label='TikTok'] svg {
+  fill: currentColor;
+  stroke: none;
+}
+
 .footer-social a:hover {
   border-color: var(--gold);
   color: var(--gold);
@@ -1245,7 +1263,7 @@ textarea {
   .gallery-row {
     --carousel-item-height: 340px;
     --carousel-item-width: 260px;
-    --carousel-shift: -1380px;
+    --carousel-shift: -2760px;
     margin-left: 24px;
     width: calc(100% - 24px);
   }
