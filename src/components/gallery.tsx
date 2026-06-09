@@ -9,13 +9,13 @@ import cake6 from '../assets/portfolio/CAKE IMG 6.webp'
 import cake7 from '../assets/portfolio/CAKE IMG 7.webp'
 
 const galleryItems = [
-  { caption: 'Imperial Gold Wedding', className: 'tall', image: cake1 },
-  { caption: 'Gothic Noir', image: cake2 },
-  { caption: 'Gravity Defying', image: cake3 },
-  { caption: 'Desert Rose', className: 'wide', image: cake4 },
-  { caption: 'Black Velvet & Red Rose', image: cake5 },
+  { caption: 'Black Red Roses', className: 'tall', image: cake1 },
+  { caption: 'Baroque-8-tier Wedding cake', image: cake2 },
+  { caption: 'Black Red Roses', image: cake3 },
+  { caption: 'Gothic', className: 'wide', image: cake4 },
+  { caption: 'Ivory', image: cake5 },
   { caption: 'Rose Atelier', image: cake6 },
-  { caption: 'Desert Bloom', image: cake7 },
+  { caption: 'Mango Chocolate', image: cake7 },
 ]
 
 export default function Gallery() {
@@ -90,9 +90,7 @@ export default function Gallery() {
               className={`gallery-item ${item.className ?? ''}`}
               key={item.caption}
               onClick={(event) => openPreview(item, event.currentTarget)}
-              onFocus={(event) => openPreview(item, event.currentTarget)}
               onKeyDown={(event) => handlePreviewKeyDown(event, item)}
-              onMouseEnter={(event) => openPreview(item, event.currentTarget)}
               role="button"
               tabIndex="0"
             >
@@ -107,9 +105,10 @@ export default function Gallery() {
       {activeItem && (
         <div
           className="gallery-hover-preview"
-          onMouseLeave={closePreview}
+          onClick={closePreview}
           style={activeItem.style}
           aria-label={`${activeItem.caption} full image preview`}
+          role="dialog"
         >
           <img src={activeItem.image} alt={activeItem.caption} />
           <p>{activeItem.caption}</p>

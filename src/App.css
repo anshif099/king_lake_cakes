@@ -951,6 +951,10 @@ textarea {
   resize: vertical;
 }
 
+.form-honeypot {
+  display: none;
+}
+
 .form-submit {
   background: var(--charcoal);
   border: 1px solid var(--charcoal);
@@ -970,6 +974,33 @@ textarea {
   background: var(--gold);
   border-color: var(--gold);
   color: var(--dark);
+}
+
+.form-submit:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.form-submit:disabled:hover,
+.form-submit:disabled:focus-visible {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: var(--warm-white);
+}
+
+.form-status {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  margin: 16px 0 0;
+}
+
+.form-status.is-success {
+  color: #42633f;
+}
+
+.form-status.is-error {
+  color: #9f3f36;
 }
 
 .site-footer {

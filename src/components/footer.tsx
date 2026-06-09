@@ -54,7 +54,7 @@ export default function Footer() {
             <a className="footer-logo" href="#home" aria-label="Kinglake Cakes home">
               <img src={logo} alt="Kinglake Cakes" />
             </a>
-            <p>Bespoke luxury cakes crafted by appointment only. Each creation is unique, handcrafted, and designed solely for you.</p>
+            <p>Bespoke luxury cakes meticulously fashioned by appointment only. Each creation is unique, handcrafted, and designed solely for you.</p>
           </div>
           {Object.entries(footerLinks).map(([title, links]) => (
             <div className="footer-col" key={title}>

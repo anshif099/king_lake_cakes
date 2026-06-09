@@ -48,7 +48,7 @@ export default function Specialties() {
             <img src={whatWeCreateImage} alt="Kinglake Cakes specialty creation" />
             <div className="specialties-image-badge">
               <p className="badge-label">Our Standard</p>
-              <p className="badge-text">"Nothing less than extraordinary"</p>
+              <p className="badge-text">"It is anything but ordinary"</p>
             </div>
           </div>
         </div>

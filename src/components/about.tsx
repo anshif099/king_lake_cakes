@@ -30,7 +30,7 @@ export default function About() {
               "Every cake is a collaboration between vision and artistry &mdash; a moment made eternal."
             </blockquote>
             <p className="about-body">
-              Kinglake Cakes is not a bakery. It is an atelier &mdash; a private studio where each creation is conceived,
+              Kinglake Cakes is not a bakery. It is an atelier &mdash; A private boutique. Each creation is conceived,
               designed, and hand-crafted exclusively for you. We work only by appointment, ensuring that every commission
               receives our full and undivided attention.
             </p>
