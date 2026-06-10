@@ -1,4 +1,4 @@
-import logo from '../assets/logo.png'
+import footerLogo from '../assets/footer.png'
 
 function InstagramIcon() {
   return (
@@ -52,7 +52,7 @@ export default function Footer() {
         <div className="footer-inner">
           <div className="footer-brand">
             <a className="footer-logo" href="#home" aria-label="Kinglake Cakes home">
-              <img src={logo} alt="Kinglake Cakes" />
+              <img src={footerLogo} alt="Kinglake Cakes" />
             </a>
             <p>Bespoke luxury cakes meticulously fashioned by appointment only. Each creation is unique, handcrafted, and designed solely for you.</p>
           </div>

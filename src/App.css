@@ -121,17 +121,16 @@ textarea {
 }
 
 .nav-logo {
-  height: 56px;
-  width: 126px;
+  height: 67px;
+  width: 151px;
 }
 
 .footer-logo {
-  height: 72px;
-  width: 158px;
+  height: 112px;
+  width: 112px;
 }
 
-.nav-logo img,
-.footer-logo img {
+.nav-logo img {
   display: block;
   height: 100%;
   object-fit: contain;
@@ -140,9 +139,18 @@ textarea {
   width: 100%;
 }
 
+.footer-logo img {
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(2);
+  transform-origin: center;
+  width: 100%;
+}
+
 .site-header.scrolled .nav-logo {
-  height: 48px;
-  width: 108px;
+  height: 58px;
+  width: 130px;
 }
 
 .nav-links {
