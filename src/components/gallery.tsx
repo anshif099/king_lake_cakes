@@ -7,6 +7,7 @@ import cake4 from '../assets/portfolio/CAKE IMG 4.webp'
 import cake5 from '../assets/portfolio/CAKE IMG 5.webp'
 import cake6 from '../assets/portfolio/CAKE IMG 6.webp'
 import cake7 from '../assets/portfolio/CAKE IMG 7.webp'
+import cake11 from '../assets/portfolio/CAKE IMG 11.webp'
 
 const galleryItems = [
   { caption: 'Black Red Roses', className: 'tall', image: cake1 },
@@ -16,6 +17,7 @@ const galleryItems = [
   { caption: 'Ivory', image: cake5 },
   { caption: 'Rose Atelier', image: cake6 },
   { caption: 'Mango Chocolate', image: cake7 },
+  { caption: 'Golden Desert Rose', image: cake11 },
 ]
 
 export default function Gallery() {
